@@ -190,12 +190,11 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		self.yOffset = 0.0f;
 		self.dimBackground = NO;
 		self.margin = 20.0f;
-		self.cornerRadius = MIN(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
 		self.graceTime = 0.0f;
 		self.minShowTime = 0.0f;
 		self.removeFromSuperViewOnHide = NO;
 		self.minSize = CGSizeZero;
-		self.square = NO;
+		self.square = YES;
 		self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin 
 								| UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 
@@ -605,6 +604,8 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	}
 	
 	self.size = totalSize;
+    
+    self.cornerRadius = MIN(self.size.width*0.5, self.size.height*0.5);
 }
 
 #pragma mark BG Drawing
